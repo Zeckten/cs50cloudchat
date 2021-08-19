@@ -4,11 +4,14 @@ from .db import get_db
 from flask import Flask, config, render_template, request, session, Blueprint, g
 from .auth import login_required
 
+from .__init__ import create_app
 
-bp = Blueprint('home', __name__)
+app = create_app()
+
+#bp = Blueprint('app', __name__)
 
 
-@bp.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 @login_required
 def index():
     db = get_db()
