@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Home{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+            </tr>
+        </thead>
+        <tbody>
+            {% for post in posts %}
+            <tr>
+                <td>{{ post['username'] }}</td>
+                <td>{{ post['body'] }}</td>
+                <td>{{ post['created'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <form method="post" route="/">
+        <input type="text" name="post" id="post" autocomplete="off">
+        <input type="submit">
+    </form>
+{% endblock %}
