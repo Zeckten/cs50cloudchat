@@ -26,8 +26,8 @@ def create_app():
     from . import auth
     appl.register_blueprint(auth.bp)
 
-    #from . import app
-    #appl.register_blueprint(app.bp)
-    #appl.add_url_rule('/', endpoint='index')
+    from . import app
+    appl.register_blueprint(app.bp)
+    appl.add_url_rule('/', endpoint='index')
 
     return appl

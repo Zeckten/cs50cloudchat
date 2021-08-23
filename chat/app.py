@@ -1,8 +1,8 @@
 import functools
 from re import S
-from db import get_db
+from .db import get_db
 from flask import Flask, config, render_template, request, session, Blueprint, g
-from auth import login_required
+from .auth import login_required
 
 
 bp = Blueprint('app', __name__)

@@ -1,1 +1,1 @@
-web: gunicorn app:app
+web: export FLASK_APP=flaskr
