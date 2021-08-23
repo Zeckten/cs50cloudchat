@@ -1,1 +1,2 @@
-web: export FLASK_APP=flaskr
+web: export FLASK_APP=app
+web: waitress-serve --call 'chat:create_app'
