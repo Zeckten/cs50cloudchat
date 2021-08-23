@@ -1,2 +1,2 @@
-worker: export FLASK_APP=chat
+"heroku-postbuild": export FLASK_APP=chat
 web: flask run
