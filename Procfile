@@ -1,2 +1,2 @@
-web: export FLASK_APP=chat
+worker: export FLASK_APP=chat
 web: flask run
