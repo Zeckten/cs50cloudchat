@@ -5,13 +5,13 @@
 {% endblock %}
 
 {% block content %}
-  <form method="post" action="{{ url_for('auth.change_password') }}">
-    <input type="password" name="oldpassword" id="password" placeholder="Current Password" required>
+  <form method="post" action="{{ url_for('auth.change_password') }}" style="text-align: center;">
+    <input class="form-control bg-primary" style="width: 15vw; margin: auto;" type="password" name="oldpassword" id="password" placeholder="Current Password" required>
     <br>
-    <input type="password" name="newpassword" id="password" placeholder="New Password" required>
+    <input class="form-control bg-primary" style="width: 15vw; margin: auto;" type="password" name="newpassword" id="password" placeholder="New Password" required>
     <br>
-    <input type="password" name="confirmation" id="confirmation" placeholder="Confrim New Password" required>
+    <input class="form-control bg-primary" style="width: 15vw; margin: auto;" type="password" name="confirmation" id="confirmation" placeholder="Confrim New Password" required>
     <br>
-    <input type="submit" value="Change Password">
+    <input class="btn btn-primary" type="submit" value="Change Password">
   </form>
 {% endblock %}

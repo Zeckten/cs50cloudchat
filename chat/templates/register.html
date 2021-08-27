@@ -5,15 +5,15 @@
 {% endblock %}
 
 {% block content %}
-  <form method="post">
-    <input type="number" name="invite" id="invite" placeholder="Invite Code" required>
+  <form method="post" style="text-align: center;">
+    <input class="form-control bg-primary" style="width: 15vw; margin: auto;" type="number" name="invite" id="invite" placeholder="Invite Code" required>
     <br>
-    <input type="text" name="username" id="username" placeholder="Username" required>
+    <input class="form-control bg-primary" style="width: 15vw; margin: auto;" type="text" name="username" id="username" placeholder="Username" required>
     <br>
-    <input type="password" name="password" id="password" placeholder="Password" required>
+    <input class="form-control bg-primary" style="width: 15vw; margin: auto;" type="password" name="password" id="password" placeholder="Password" required>
     <br>
-    <input type="password" name="confirmation" id="confirmation" placeholder="Confrim Password" required>
+    <input class="form-control bg-primary" style="width: 15vw; margin: auto;" type="password" name="confirmation" id="confirmation" placeholder="Confrim Password" required>
     <br>
-    <input type="submit" value="Register">
+    <input class="btn btn-primary" type="submit" value="Register">
   </form>
 {% endblock %}
