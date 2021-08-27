@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h5>{% block title %}Settings{% endblock %}</h5>
+{% endblock %}
+
+{% block content %}
+  <form method="post" action="{{ url_for('auth.change_password') }}">
+    <input type="password" name="oldpassword" id="password" placeholder="Current Password" required>
+    <br>
+    <input type="password" name="newpassword" id="password" placeholder="New Password" required>
+    <br>
+    <input type="password" name="confirmation" id="confirmation" placeholder="Confrim New Password" required>
+    <br>
+    <input type="submit" value="Change Password">
+  </form>
+{% endblock %}

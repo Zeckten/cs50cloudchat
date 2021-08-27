@@ -3,6 +3,7 @@ import sqlite3
 import click
 from flask import current_app, g
 from flask.cli import with_appcontext
+import random
 
 
 
@@ -41,3 +42,19 @@ def init_db_command():
 def init_app(app):
     app.teardown_appcontext(close_db)
     app.cli.add_command(init_db_command)
+    app.cli.add_command(create_invite_command)
+
+def create_invite(admin):
+    db = get_db()
+    invite = random.randint(100000000, 999999999)
+    db.execute('INSERT INTO invite VALUES (?,?)',
+                (invite, admin)
+    )
+    db.commit()
+    return invite
+
+@click.command('create-invite')
+@click.argument('admin')
+@with_appcontext
+def create_invite_command(admin):
+    click.echo(create_invite(admin))

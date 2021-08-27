@@ -14,12 +14,6 @@ def create_app():
 
     appl.config['TEMPLATES_AUTO_RELOAD'] = True
 
-
-    # a simple page that says hello
-    @appl.route('/hello')
-    def hello():
-        return 'Hello, World!'
-
     from . import db
     db.init_app(appl)
 

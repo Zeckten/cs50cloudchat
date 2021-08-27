@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Home{% endblock %}</h1>
+  <h5>{% block title %}Home{% endblock %}</h5>
 {% endblock %}
 
 {% block content %}
+    <div style="overflow-y:scroll; height: 75vh; width: 100vw; display: flex; flex-direction: column-reverse;">
     <table class="table table-hover table-striped">
         <thead>
             <tr>
@@ -13,14 +14,15 @@
         <tbody>
             {% for post in posts %}
             <tr>
-                <td>{{ post['username'] }}</td>
-                <td>{{ post['body'] }}</td>
-                <td>{{ post['created'] }}</td>
+                <td style="width: 25vw; overflow-x: hidden;">{{ post['username'] }}</td>
+                <td style="width: 50vw;"><p style="max-width: 50vw; overflow-wrap: break-word;">{{ post['body'] }}</p></td>
+                <td style="width: 25vw;">{{ post['created'] }} GMT</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-    <form method="post" route="/">
+    </div>
+    <form method="post" action="/" style="display: flex; justify-content: center; align-items: center;">
         <input type="text" name="post" id="post" autocomplete="off">
         <input type="submit">
     </form>
