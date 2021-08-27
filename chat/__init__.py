@@ -8,7 +8,7 @@ def create_app():
     # create and configure the app
     appl = Flask(__name__)
     appl.config.from_mapping(
-        SECRET_KEY='p7S^qJFf!kj*bH$5xP2rmJk@aJd8F46rzsKqf$k9ooofe6r72^b2yyX8T648QZ*qv5dJSif6kKCZ8AsR*DFPs9gUV^bfSXUNV&Ub^hZcYR3V^UckYuHQMBGCGWs2RGD',
+        SECRET_KEY = os.environ.get("SECRET_KEY"),
         DATABASE=os.path.join(appl.root_path, 'cloudchat.db'),
     )
 
