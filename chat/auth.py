@@ -29,7 +29,7 @@ def register():
             error = 'Passwords do not match.'
         
         try:
-            admin = db.execute('SELECT admin FROM invite WHERE code=?', invite).fetchone()['admin']
+            admin = db.execute('SELECT admin FROM invite WHERE code=?', (invite,)).fetchone()['admin']
         except:
             error = 'Invalid invite'
         if error is None:
@@ -38,7 +38,7 @@ def register():
                     "INSERT INTO user (username, password, admin) VALUES (?, ?, ?)",
                     (username, generate_password_hash(password), admin),
                 )
-                db.execute('DELETE FROM invite WHERE code=?', invite)
+                db.execute('DELETE FROM invite WHERE code=?', (invite,))
                 db.commit()
             except db.IntegrityError:
                 error = f"User {username} is already registered."
