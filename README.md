@@ -1,5 +1,5 @@
 # cs50cloudchat
-#### Video Demo:  <URL HERE>
+#### Video Demo:  https://youtu.be/w_ZdODoZsUY
 #### Description:
 A portion of this code is taken from or inspired by the tutorials on flask.palletsprojects.com and CS50's Finance.
 
