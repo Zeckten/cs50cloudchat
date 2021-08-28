@@ -9,10 +9,10 @@ def create_app():
     appl = Flask(__name__)
     appl.config.from_mapping(
         SECRET_KEY = os.environ.get("SECRET_KEY"),
-        DATABASE=os.path.join(appl.root_path, 'cloudchat.db'),
+        TEMPLATES_AUTO_RELOAD = True,
+        DATABASE = os.path.join(appl.root_path, 'cloudchat.db'),
     )
 
-    appl.config['TEMPLATES_AUTO_RELOAD'] = True
 
     from . import db
     db.init_app(appl)
